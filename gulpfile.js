@@ -22,6 +22,7 @@ const supportedBrowsers = 'last 3 versions';
 const scssMain = ['scss/main.scss'];
 const scssSources = ['scss/**/*.scss'];
 const reactFiles = ['web_modules/**/*jsx'];
+const src = ['src/**/*'];
 
 // Production Styles w/o lint, source maps & with compression to optimize speed
 gulp.task('scss-prod', function () {
@@ -87,7 +88,7 @@ gg({
 }).setup(gulp);
 
 // Build React & SCSS using 'scss-dev' task
-gulp.task('build', ['webpack', 'scss-dev']);
+gulp.task('build', ['webpack', 'scss-dev', 'src']);
 gulp.task('build.production', ['webpack.production', 'scss-prod']);
 
 /* Purify CSS */
@@ -96,8 +97,14 @@ const purifyOptions = {
   rejected: true
 };
 
-gulp.task('purify-css', function() {
+gulp.task('purify-css', function () {
   return gulp.src('public/css/main.css')
-    .pipe(purify(['./public/js/**/*.js', './public/*.html'], purifyOptions))
+    .pipe(purify(['./public/js/**/*.js', './public/*.html'], purifyOptions));
 });
-gulp.task("default", ["build"]);
+
+gulp.task('src', function () {
+  return gulp.src(src)
+    .pipe(gulp.dest('public'));
+});
+
+gulp.task('default', ['build']);
