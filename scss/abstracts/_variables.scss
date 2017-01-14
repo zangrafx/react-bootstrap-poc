@@ -1,0 +1,59 @@
+/* Font Stack and Sizes */
+$font-stack: 'sofia-pro', Helvetica, Arial, sans-serif !default;
+$base-size: 16 !default;
+$font-size: ($base-size * 1px) !default;
+$rhythm-unit: 4 !default;
+
+/* Colors */
+$white: #fff !default;
+$white-liliac: #f6f8fc !default;
+$black: #171a1f !default;
+$blue-ribbon: #0e65e5 !default;
+$dark-blue-ribbon: #0756de !default;
+$blue: #0e1de5 !default;
+$green: #00db96 !default;
+$secondary-green: #00e16f !default;
+$dark-green: #05c184 !default;
+$violet: #b400ff !default;
+$mid-orange: #ff7b06 !default; /* New Color */
+$orange: #ff5730 !default;
+$broom: #fff727 !default;
+$pale-sky: #636e80 !default;
+$cadet-blue: #b1bbc9 !default;
+$botticelli: #d4dce8 !default;
+$lite-gray: #7d8da8 !default;
+$gray-30: rgba(255, 255, 255, .3) !default;
+
+/* Default Transition */
+$cubic: cubic-bezier(.17, .67, .47, 1) !default;
+
+/* Typography weight */
+$light: 300;
+$regular: 500;
+$bold: 700;
+
+/* Shadows */
+$black-shadow-20: 0 7px 20px 0 rgba(0, 0, 0, .2) !default;
+$gray-shadow-30: 0 7px 20px 0 rgba(99, 110, 128, .3) !default;
+$gray-shadow-20: 0 7px 15px 0 rgba(99, 110, 128, .2) !default;
+
+/* Rem Calculation */
+@function remcalc($size) {
+  @return (($size / $base-size) * 1rem);
+}
+
+/* Typography Map */
+$fonts: (
+  12: remcalc(16),
+  14: remcalc(20),
+  16: remcalc(24),
+  20: remcalc(32),
+  26: remcalc(32),
+  32: remcalc(40),
+  48: remcalc(56),
+  72: remcalc(80)
+);
+
+/* Other */
+$gutter: remcalc(20);
+$radius: 6px;

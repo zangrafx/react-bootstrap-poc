@@ -1,0 +1,141 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+
+  &:before, &:after {
+    content: '';
+  }
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  background: transparent;
+}
+
+/* insanepl@gmail.com
+   License: none (public domain)
+   Forms Reset
+*/
+
+input, select, textarea, button {
+  display: inline-block;
+  width: auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  white-space: normal;
+  vertical-align: middle;
+  appearance: none;
+
+  &:focus,
+  &:active,
+  &:hover {
+    outline: 0;
+  }
+
+  &::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+  }
+}
+
+input {
+  background-clip: padding-box;
+
+  &[type=search] {
+    appearance: textfield;
+    box-sizing: content-box;
+  }
+
+  &::-webkit-search-decoration {
+    display: none;
+  }
+
+  &[type='reset'],
+  &[type='button'],
+  &[type='submit'] {
+    cursor: pointer;
+    overflow: visible;
+    appearance: button;
+
+  }
+
+  &::-webkit-file-upload-button {
+    padding: 0;
+    border: 0;
+    background: none;
+  }
+
+  &[type='checkbox'],
+  &[type='radio'] {
+    padding: 0;
+  }
+
+  &[type='number']::-webkit-inner-spin-button,
+  &[type='number']::-webkit-outer-spin-button {
+    height: auto;
+  }
+
+  &::-ms-clear, &::-ms-reveal {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+}
+
+select {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  user-select: none;
+
+  &::-ms-expand {
+    display: none;
+  }
+}
+
+textarea {
+  padding-right: 10px;
+  vertical-align: top;
+  resize: none;
+}
+
+/* Box Models etc. */
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+/* Font Smoothing */
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Disable Focus, Active */
+:focus, :active {
+  outline: 0;
+}

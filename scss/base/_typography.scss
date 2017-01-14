@@ -1,0 +1,100 @@
+/* Strong */
+strong,
+b {
+  font-weight: $bold;
+}
+
+/* Headers */
+.heading-1,
+.heading-2,
+.heading-3 {
+  display: inline-block;
+  position: relative;
+  width: auto;
+  margin-right: auto;
+  font-weight: $light;
+
+  .heading {
+    display: inline-block;
+    width: auto;
+  }
+
+  .mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 120%;
+    background: $white;
+  }
+}
+
+.heading-1 {
+  @include size-rythm(32, 5);
+
+  @include breakpoint(medium) {
+    @include just-rythm(48);
+  }
+}
+
+.heading-3 {
+  @include size-rythm(20, 2);
+
+  @include breakpoint(medium) {
+    @include just-rythm(26);
+  }
+}
+
+/* Static Headers */
+.static-heading-2 {
+  @include size-rythm(26, 5);
+
+  @include breakpoint(small) {
+    margin-bottom: remcalc(28);
+  }
+}
+
+.static-heading-3 {
+  @include size-rythm(20, 3);
+}
+
+/* Header Modifiers */
+.static-heading-2,
+.static-heading-3 {
+  @extend %block;
+  position: relative;
+  font-weight: $light;
+
+  /* Colors */
+  &.blue {
+    color: $blue-ribbon;
+  }
+
+  &.green {
+    color: $green;
+  }
+
+  /* Center Text */
+  &.center {
+    text-align: center;
+  }
+
+  /* Capitalize */
+  &.all-caps {
+    text-transform: uppercase;
+  }
+}
+
+/* Paragraphs */
+.regular-paragraph {
+  @include size-rythm(16, 6);
+
+  .bottom-spacing & {
+    &:last-child {
+      margin-bottom: remcalc(36);
+
+      @include breakpoint(small) {
+        margin-bottom: remcalc(48);
+      }
+    }
+  }
+}

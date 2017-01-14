@@ -1,0 +1,65 @@
+/* Breakpoints */
+@mixin breakpoint($point) {
+  @if $point == small {
+    @media only screen and (min-width: 768px) {
+      @content;
+    }
+  } @else if $point == medium {
+    @media only screen and (min-width: 1024px) {
+      @content;
+    }
+  } @else if $point == large {
+    @media only screen and (min-width: 1240px) {
+      @content;
+    }
+  } @else if $point == extralarge {
+    @media only screen and (min-width: 1600px) {
+      @content;
+    }
+  }
+}
+
+/* React Viewports */
+.viewport {
+  display: none;
+  font-family: 'ExtraSmall';
+
+  @include breakpoint(small) {
+    font-family: 'Small';
+  }
+
+  @include breakpoint(medium) {
+    font-family: 'Medium';
+  }
+
+  @include breakpoint(large) {
+    font-family: 'Large';
+  }
+
+  @include breakpoint(extralarge) {
+    font-family: 'ExtraLarge';
+  }
+}
+
+/* Size - Line Height - Margin */
+@mixin size-rythm($font, $margin) {
+  @if map-has-key($fonts, $font) { /* Check if font size exist */
+    $value: #{map-get($fonts, $font)}; /* Store size in variable */
+    font-size: ($font / $base-size) * 1rem;
+    line-height: $value;
+    margin-bottom: (($margin * $rhythm-unit) / $base-size) * 1rem;
+  } @else {
+    @warn 'Font size `#{$font}`px is not defined.';
+  }
+}
+
+/* Readjust Size and Line Height, keeping same margin */
+@mixin just-rythm($font) {
+  @if map-has-key($fonts, $font) { /* Check if font size exist */
+    $value: #{map-get($fonts, $font)}; /* Store size in variables */
+    font-size: ($font / $base-size) * 1rem;
+    line-height: $value;
+  } @else {
+    @warn 'Font size `#{$font}`px is not defined.';
+  }
+}

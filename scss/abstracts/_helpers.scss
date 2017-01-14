@@ -1,0 +1,47 @@
+/* Extends */
+/* Display */
+%block { display: block; }
+%inline-block { display: inline-block; }
+
+/* Misc Helpers */
+%no-select { user-select: none; }
+
+%regular-link,
+.regular-link {
+  color: $blue-ribbon;
+  text-decoration: none;
+}
+
+
+/* Helper Classes */
+/* Display */
+.block { display: block; }
+.inline-block { display: inline-block; }
+
+.is-hidden {
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.flex-column {
+  @include breakpoint(small) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* Text Align */
+.align-center {
+  text-align: center;
+}
+
+/* Font Weight */
+.light { font-weight: $light; }
+.regular { font-weight: $regular; }
+.bold { font-weight: $bold; }
+
+/* Margin Fixes */
+.last-node { margin-bottom: 0; }
